@@ -1,0 +1,16 @@
+.alineamientoTitulo{
+    text-align: center;
+}
+.fondoPagina{
+    background-image: url(/peliculas/fotosPelis/fondoCine.webp); }
+ 
+.grilla{
+    display:grid ;
+    grid-template-columns:250px 250 ;
+    grid-template-columns:repeat() ;
+    grid-template-rows:350 ;
+}
+.fotoDinamica{
+    width:100% ;
+     aspect-ratio: 1 / 2;  /*puede ser opcional-> dale estructura a la img*/
+}
