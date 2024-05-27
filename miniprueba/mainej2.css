@@ -1,4 +1,4 @@
-.alineamientoTitulo {
+alineamientoTitulo {
   text-align: center;
 }
 .fondoPagina {
@@ -8,11 +8,12 @@
 .grilla {
   display: grid;
   grid-template-columns: repeat(3, 350px);
-  grid-template-rows: auto;
-  gap: 120px;
+  gap: 130px;
+  grid-template-rows: repeat(3, 350px);
 }
 .fotoDinamica {
-  width: 100%;
-  aspect-ratio: 2 / 1;
+  width: 50%;
+  aspect-ratio: 4 / 5;
   object-fit: cover;
+  paddd: 0%;
 }
