@@ -1,0 +1,24 @@
+import requests
+
+def convertir_moneda(cantidad, moneda_origen, moneda_destino):
+    api_key = 'tu_api_key'  # Reemplaza 'tu_api_key' por tu clave API válida
+    url = f'https://api.exchangeratesapi.io/latest?base={moneda_origen}&symbols={moneda_destino}&access_key={api_key}'
+    
+    try:
+        response = requests.get(url)
+        data = response.json()
+        tasa_cambio = data['rates'][moneda_destino]
+        cantidad_convertida = cantidad * tasa_cambio
+        return cantidad_convertida
+    except requests.exceptions.RequestException as e:
+        print('Error al conectar con la API:', e)
+        return None
+
+# Ejemplo de uso:
+cantidad = 100
+moneda_origen = 'USD'
+moneda_destino = 'EUR'
+
+resultado = convertir_moneda(cantidad, moneda_origen, moneda_destino)
+if resultado:
+    print(f'{cantidad} {moneda_origen} equivale a {resultado:.2f} {moneda_destino}')
